@@ -16,12 +16,16 @@ void ShowPoint();
 int main(void)
 {
 	srand(time(NULL));
+	system("title Super Math Game! - By John \"WTCa100\" Bielawa");
 	std::cout << "Hello and welcome to my first official C++ project!\n";
 	std::cout << "The idea of this project is simple - the program will show you calculation and you will have to guess the right answer.\n";
 	std::cout << "Every time the answer problem is shown you will get a shor period of time to calculate it.\n";
 	std::cout << "Best of luck!\n";
 	_getch();
-	std::system("cls");
+	system("cls");
+	printf("NOTICE: This game be will be developed later on as a second project with different programming paradigm in mind\n");
+	_getch();
+	system("cls");
 	while (bGameOn)
 	{
 		nScore = 0;
@@ -43,8 +47,8 @@ void DificultSelection()
 		std::cout << "1. Easy\n";
 		std::cout << "2. Medium\n";
 		std::cout << "3. Hard\n";
-		std::cout << "4. Math Teacher\n"; // 4th and 5th difficult option will be added in future
-		std::cout << "5. Pure math PROfessor (chad)\n";
+		std::cout << "4. Math Teacher\t -> \t Work In Progress\n"; // 4th and 5th difficult option will be added in future
+		std::cout << "5. Pure math PROfessor (chad)\t -> \t Work In Progress\n";
 		std::getline(std::cin, tmp);
 		if ((int)tmp[0] < '0' || (int)tmp[0] > '5')
 		{

@@ -248,14 +248,14 @@ void Problems(uint16_t nDif) {
 			}
 			case 4:
 			{
-				nNumber1 = rand() % 50 + 1;
+				nNumber1 = rand() % 30 + 5;
 				if (nNumber1 > 50)
 				{
-					nNumber2 = rand() % 25 + 1;
+					nNumber2 = rand() % 25 + 5;
 				}
 				else
 				{
-					nNumber2 = rand()% 50 + 1;
+					nNumber2 = rand()% 25 + 5;
 				}
 				break;
 			}
@@ -322,10 +322,108 @@ void Problems(uint16_t nDif) {
 					}
 				}
 			} while (!bValidStrin(sUserAnswer) || sUserAnswer[0] == '\0');
+			system("cls");
 		}
 		break;
 	}
 	case 3: {
+		for (int i = 0; i < 10 * nDif; i++)
+		{
+			bool bIsCorrect = false;
+			cExercise = ' ';
+			int nAction = rand() % 4 + 1;
+			cExercise = sWhatAction(nAction);
+			switch (nAction)
+			{
+			case 3:
+			{
+				nNumber1 = rand() % 8999 + 10001;
+				do
+				{
+					nNumber2 = rand() % 8999 + 1001;
+					if (nNumber2 == 1)
+						nNumber2 = rand() % 8999 + 1001;
+				} while (nNumber1 % nNumber2 != 0 || nNumber2 >= nNumber1);
+				break;
+			}
+			case 4:
+			{
+				nNumber1 = rand() % 100 + 51;
+				if (nNumber1 > 90)
+				{
+					nNumber2 = rand() % 50 + 1;
+				}
+				else
+				{
+					nNumber2 = rand() % 100 + 51;
+				}
+				break;
+			}
+			case 2:
+			{
+				nNumber1 = rand() % 950 + 51;
+				nNumber2 = rand() % 950 + 51;
+				break;
+			}
+			case 1:
+			{
+				nNumber1 = rand() % 900 + 101;
+				nNumber2 = rand() % 900 + 101;
+				break;
+			}
+			}
+			do
+			{
+				std::cout << "Problem " << i + 1 << "\t" << "Score: " << nScore << std::endl;
+				printf_s("%d %c %d = ", nNumber1, cExercise, nNumber2);
+				std::getline(std::cin, sUserAnswer);
+				if (!bValidStrin(sUserAnswer) || sUserAnswer[0] == '\0')
+				{
+					std::cout << "Not a valid answer!" << std::endl;
+					_getch();
+					system("cls");
+				}
+				else
+				{
+					switch (nAction)
+					{
+					case 1: {
+						if (std::stoi(sUserAnswer) == nNumber1 + nNumber2)
+						{
+							nScore += 30;
+							bIsCorrect = true;
+							break;
+						}
+					}
+					case 2: {
+						if (std::stoi(sUserAnswer) == nNumber1 - nNumber2)
+						{
+							nScore += 30;
+							bIsCorrect = true;
+							break;
+						}
+					}
+					case 3: {
+						if (std::stoi(sUserAnswer) == nNumber1 / nNumber2)
+						{
+							nScore += 30;
+							bIsCorrect = true;
+							break;
+						}
+					}
+					case 4: {
+						if (std::stoi(sUserAnswer) == nNumber1 * nNumber2)
+						{
+							nScore += 30;
+							bIsCorrect = true;
+							break;
+						}
+					}
+					}
+				}
+			} while (!bValidStrin(sUserAnswer) || sUserAnswer[0] == '\0');
+			system("cls");
+		}
 		break;
 	}
 		  //TODO 2 hardest options

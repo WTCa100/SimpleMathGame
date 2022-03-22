@@ -137,7 +137,7 @@ void Problems(uint16_t nDif) {
 	{
 	case 1:
 	{
-		for (int i = 0; i < 5 * nDif; i++)
+		for (int i = 0; i < 10 * nDif; i++)
 		{
 			bool bIsCorrect = false;
 			cExercise = ' ';
@@ -148,29 +148,33 @@ void Problems(uint16_t nDif) {
 			{
 				do
 				{
-					nNumber1 = rand() % 101 + 1;
-					nNumber2 = rand() % 101 + 1;
+					nNumber1 = rand() % 100 + 1;
+					nNumber2 = rand() % 100 + 1;
 					if (nNumber1 <= nNumber2)
 					{
-						nNumber1 = rand() % 101 + 1;
-						nNumber2 = rand() % 101 + 1;
+						nNumber1 = rand() % 100 + 1;
+						nNumber2 = rand() % 100 + 1;
 
 						if (nNumber1 % nNumber2 != 0 || nNumber1 == nNumber2)
 						{
-							nNumber2 = rand() % 101 + 1;
+							nNumber2 = rand() % 100 + 1;
 						}
 					}
 				} while (nNumber1 <= nNumber2 || nNumber1 % nNumber2 != 0);
 			}
 			else if (nAction == 4)
 			{
-				nNumber1 = rand() % 11 + 1;
-				nNumber2 = rand() % 11 + 1;
+				nNumber1 = rand() % 10 + 1;
+				nNumber2 = rand() % 10 + 1;
 			}
-			else
+			else if(nAction == 1)
 			{
 				nNumber1 = rand() % 50 + 1;
 				nNumber2 = rand() % 25 + 1;
+			}
+			else
+			{
+				nNumber1 = rand() % 50 + 51;
 			}
 			do
 			{
@@ -192,32 +196,33 @@ void Problems(uint16_t nDif) {
 						{
 							nScore += 10;
 							bIsCorrect = true;
-							break;
+							
 						}
+					break;
 					}
 					case 2: {
 						if (std::stoi(sUserAnswer) == nNumber1 - nNumber2)
 						{
 							nScore += 10;
 							bIsCorrect = true;
-							break;
 						}
+						break;
 					}
 					case 3: {
 						if (std::stoi(sUserAnswer) == nNumber1 / nNumber2)
 						{
 							nScore += 10;
 							bIsCorrect = true;
-							break;
 						}
+						break;
 					}
 					case 4: {
 						if (std::stoi(sUserAnswer) == nNumber1 * nNumber2)
 						{
 							nScore += 10;
 							bIsCorrect = true;
-							break;
 						}
+						break;
 					}
 					}	
 				}
@@ -337,12 +342,12 @@ void Problems(uint16_t nDif) {
 			{
 			case 3:
 			{
-				nNumber1 = rand() % 8999 + 10001;
+				nNumber1 = rand() % 9000 + 1001; // From 0 to 8999 + 1001 so from 1001 to 10000
 				do
 				{
-					nNumber2 = rand() % 8999 + 1001;
+					nNumber2 = rand() % 100 + 1;
 					if (nNumber2 == 1)
-						nNumber2 = rand() % 8999 + 1001;
+						nNumber2 = rand() % 100 + 1; // From 0 to 99 + 1 so from 1 to 100 
 				} while (nNumber1 % nNumber2 != 0 || nNumber2 >= nNumber1);
 				break;
 			}
@@ -361,14 +366,14 @@ void Problems(uint16_t nDif) {
 			}
 			case 2:
 			{
-				nNumber1 = rand() % 950 + 51;
-				nNumber2 = rand() % 950 + 51;
+				nNumber1 = rand() % 9000 + 1000;
+				nNumber2 = rand() % 9000 + 1000;
 				break;
 			}
 			case 1:
 			{
-				nNumber1 = rand() % 900 + 101;
-				nNumber2 = rand() % 900 + 101;
+				nNumber1 = rand() % 9000 + 1000; // From 0 to 8999 + 1000 so from 1000 to 9999 
+				nNumber2 = rand() % 9000 + 1000;
 				break;
 			}
 			}
@@ -392,32 +397,32 @@ void Problems(uint16_t nDif) {
 						{
 							nScore += 30;
 							bIsCorrect = true;
-							break;
 						}
+						break;
 					}
 					case 2: {
 						if (std::stoi(sUserAnswer) == nNumber1 - nNumber2)
 						{
 							nScore += 30;
 							bIsCorrect = true;
-							break;
 						}
+						break;
 					}
 					case 3: {
 						if (std::stoi(sUserAnswer) == nNumber1 / nNumber2)
 						{
 							nScore += 30;
 							bIsCorrect = true;
-							break;
 						}
+						break;
 					}
 					case 4: {
 						if (std::stoi(sUserAnswer) == nNumber1 * nNumber2)
 						{
 							nScore += 30;
 							bIsCorrect = true;
-							break;
 						}
+						break;
 					}
 					}
 				}

@@ -101,7 +101,7 @@ void AskForNextAct()
 	do {
 
 		printf("Would you like to play again?\n");
-		printf("1. Yes 2. No");
+		printf("1. Yes 2. No"); // Later on add HighScore that will save and sort the scores from min to max and then display only the top 10 ones
 		printf("\nWarning! By selecting No option the game will close\n");
 		std::getline(std::cin, sOption);
 		if (sOption[0] != '1' && sOption[0] != '2')
@@ -220,7 +220,7 @@ void Problems(uint16_t nDif) {
 							break;
 						}
 					}
-					}
+					}	
 				}
 			} while (!bValidStrin(sUserAnswer) || sUserAnswer[0] == '\0');
 			system("cls");

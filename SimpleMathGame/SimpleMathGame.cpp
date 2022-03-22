@@ -16,7 +16,6 @@ void ShowPoint();
 int main(void)
 {
 	srand(time(NULL));
-
 	std::cout << "Hello and welcome to my first official C++ project!\n";
 	std::cout << "The idea of this project is simple - the program will show you calculation and you will have to guess the right answer.\n";
 	std::cout << "Every time the answer problem is shown you will get a shor period of time to calculate it.\n";
@@ -228,6 +227,76 @@ void Problems(uint16_t nDif) {
 		break;
 	}
 	case 2: {
+		for (int i = 0; i < 10 * nDif; i++)
+		{
+			bool bIsCorrect = false;
+			cExercise = ' ';
+			int nAction = rand() % 4 + 1;
+			cExercise = sWhatAction(nAction);
+			switch (nAction)
+			{
+			case 3:
+			{
+				nNumber1 = rand() % 1000 + 1;
+				do
+				{
+					nNumber2 = rand()% 1000 + 1;
+				} while (nNumber2 % 0 != 0 && nNumber2 != 1 && nNumber2 > nNumber1 && nNumber2 != nNumber1);
+				break;
+			}
+
+			}
+			do
+			{
+				std::cout << "Problem " << i + 1 << "\t" << "Score: " << nScore << std::endl;
+				printf_s("%d %c %d = ", nNumber1, cExercise, nNumber2);
+				std::getline(std::cin, sUserAnswer);
+				if (!bValidStrin(sUserAnswer) || sUserAnswer[0] == '\0')
+				{
+					std::cout << "Not a valid answer!" << std::endl;
+					_getch();
+					system("cls");
+				}
+				else
+				{
+					switch (nAction)
+					{
+					case 1: {
+						if (std::stoi(sUserAnswer) == nNumber1 + nNumber2)
+						{
+							nScore += 20;
+							bIsCorrect = true;
+							break;
+						}
+					}
+					case 2: {
+						if (std::stoi(sUserAnswer) == nNumber1 - nNumber2)
+						{
+							nScore += 20;
+							bIsCorrect = true;
+							break;
+						}
+					}
+					case 3: {
+						if (std::stoi(sUserAnswer) == nNumber1 / nNumber2)
+						{
+							nScore += 20;
+							bIsCorrect = true;
+							break;
+						}
+					}
+					case 4: {
+						if (std::stoi(sUserAnswer) == nNumber1 * nNumber2)
+						{
+							nScore += 20;
+							bIsCorrect = true;
+							break;
+						}
+					}
+					}
+				}
+			} while (!bValidStrin(sUserAnswer) || sUserAnswer[0] == '\0');
+		}
 		break;
 	}
 	case 3: {

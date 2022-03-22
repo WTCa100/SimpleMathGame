@@ -240,11 +240,37 @@ void Problems(uint16_t nDif) {
 				nNumber1 = rand() % 1000 + 1;
 				do
 				{
-					nNumber2 = rand()% 1000 + 1;
-				} while (nNumber2 % 0 != 0 && nNumber2 != 1 && nNumber2 > nNumber1 && nNumber2 != nNumber1);
+					nNumber2 = rand() % 100 + 1;
+					if (nNumber2 == 1)
+						nNumber2 = rand() % 100 + 1;
+				} while (nNumber1 % nNumber2 != 0 || nNumber2 >= nNumber1);
 				break;
 			}
-
+			case 4:
+			{
+				nNumber1 = rand() % 50 + 1;
+				if (nNumber1 > 50)
+				{
+					nNumber2 = rand() % 25 + 1;
+				}
+				else
+				{
+					nNumber2 = rand()% 50 + 1;
+				}
+				break;
+			}
+			case 2:
+			{
+				nNumber1 = rand() % 100 + 50;
+				nNumber2 = rand() % 100 + 50;
+				break;
+			}
+			case 1:
+			{
+				nNumber1 = rand() % 100 + 50;
+				nNumber2 = rand() % 100 + 50;
+				break;
+			}
 			}
 			do
 			{

@@ -23,7 +23,8 @@ int main(void)
 	std::cout << "Best of luck!\n";
 	_getch();
 	system("cls");
-	printf("NOTICE: This game be will be developed later on as a second project with different programming paradigm in mind\n");
+	printf("NOTICE: This version of the game will no longer be supported. If you want to try the new version you can find it here:\n");
+	printf("https://github.com/WTCa100/SimpleMathGameV2");
 	_getch();
 	system("cls");
 	while (bGameOn)
@@ -47,8 +48,8 @@ void DificultSelection()
 		std::cout << "1. Easy\n";
 		std::cout << "2. Medium\n";
 		std::cout << "3. Hard\n";
-		std::cout << "4. Math Teacher\t -> \t Work In Progress\n"; // 4th and 5th difficult option will be added in future
-		std::cout << "5. Pure math PROfessor (chad)\t -> \t Work In Progress\n";
+		std::cout << "4. Math Teacher\t -> \t Try it on SimpleMathGameV2!\n"; // 4th and 5th difficult option will be added in future
+		std::cout << "5. Pure math PROfessor (chad)\t -> \t Try it on SimpleMathGameV2!\n";
 		std::getline(std::cin, tmp);
 		if ((int)tmp[0] < '0' || (int)tmp[0] > '5')
 		{
@@ -58,6 +59,7 @@ void DificultSelection()
 		}
 		else
 		{
+
 			nDificult = std::stoi(tmp);
 		}
 	} while (nDificult < 1 || nDificult > 5);
@@ -137,6 +139,7 @@ void Problems(uint16_t nDif) {
 	srand(time(NULL));
 	char cExercise;
 	std::string sUserAnswer;
+
 	switch (nDif)
 	{
 	case 1:
@@ -435,6 +438,6 @@ void Problems(uint16_t nDif) {
 		}
 		break;
 	}
-		  //TODO 2 hardest options
+		  //TODO 2 hardest options - they are avilable in the new game in V2
 	}
 } 

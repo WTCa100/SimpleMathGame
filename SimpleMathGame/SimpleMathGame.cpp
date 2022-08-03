@@ -16,7 +16,7 @@ void ShowPoint();
 int main(void)
 {
 	srand(time(NULL));
-	system("title Super Math Game! - By John \"WTCa100\" Bielawa");
+	system("title Super Math Game! - By John \"Pepga315\" Bielawa");
 	std::cout << "Hello and welcome to my first official C++ project!\n";
 	std::cout << "The idea of this project is simple - the program will show you calculation and you will have to guess the right answer.\n";
 	std::cout << "Every time the answer problem is shown you will get a shor period of time to calculate it.\n";
@@ -24,7 +24,7 @@ int main(void)
 	_getch();
 	system("cls");
 	printf("NOTICE: This version of the game will no longer be supported. If you want to try the new version you can find it here:\n");
-	printf("https://github.com/WTCa100/SimpleMathGameV2");
+	printf("https://github.com/Pepga315/SimpleMathGame-Rework");
 	_getch();
 	system("cls");
 	while (bGameOn)

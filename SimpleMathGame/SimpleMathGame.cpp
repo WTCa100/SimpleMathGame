@@ -438,6 +438,6 @@ void Problems(uint16_t nDif) {
 		}
 		break;
 	}
-		  //TODO 2 hardest options - they are avilable in the new game in V2
+		  //TODO 2 hardest options - they are avilable in the new game in PIrun!
 	}
 } 
